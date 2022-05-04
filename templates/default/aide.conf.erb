@@ -3,7 +3,7 @@ database=file:@@{DBDIR}/aide.db.gz
 database_out=file:@@{DBDIR}/aide.db.gz
 gzip_dbout=<%= node['aide']['gzip'] %>
 <% if node[:platform_version] == "22.04" %>
-log_level=<%= node['aide']['local_level'] %>
+log_level=<%= node['aide']['log_level'] %>
 <% else %>
 verbose=<%= node['aide']['verbose'] %>
 <% end %>
