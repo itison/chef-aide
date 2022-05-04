@@ -2,7 +2,11 @@
 database=file:@@{DBDIR}/aide.db.gz
 database_out=file:@@{DBDIR}/aide.db.gz
 gzip_dbout=<%= node['aide']['gzip'] %>
+<% if node[:release][:version] == "22.04" %>
+log_level=<%= node['aide']['local_level'] %>
+<% else %>
 verbose=<%= node['aide']['verbose'] %>
+<% end %>
 report_url=<%= node['aide']['report_url'] %>
 
 <% node['aide']['macros'].each do |name,definition| -%>
