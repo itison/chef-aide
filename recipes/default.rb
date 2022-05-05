@@ -18,9 +18,10 @@ end
 
 cron_d 'aide' do
   action :create
+  minute '0'
   hour "*/6"
   user 'root'
-  command "#{node['aide']['binary']} -c #{node['aide']['extra_parameters']} #{quiet_report} --check"
+  command "#{node['aide']['binary']} #{node['aide']['extra_parameters']} #{quiet_report} --check"
   mailto node['aide']['cron_mailto'] if node['aide']['cron_mailto']
 end
 
