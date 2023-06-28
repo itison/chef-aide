@@ -4,7 +4,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 maintainer 'John Daniels'
 maintainer_email 'john.daniels@itison.com'
 license 'BSD-2-Clause'
-version '0.3.0'
+version '0.3.1'
 
 supports 'centos'
 supports 'ubuntu'

@@ -21,7 +21,7 @@ cron_d 'aide' do
   minute '0'
   hour "*/6"
   user 'root'
-  command "#{node['aide']['binary']} #{node['aide']['extra_parameters']} #{quiet_report} --check"
+  command "#{node['aide']['binary']} #{node['aide']['extra_parameters']} #{quiet_report} --check | sed -z '$ s/\n$//'"
   mailto node['aide']['cron_mailto'] if node['aide']['cron_mailto']
 end
 
