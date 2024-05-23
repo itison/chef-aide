@@ -1,7 +1,7 @@
 @@define DBDIR <%= node['aide']['dbdir'] %>
 database_out=file:@@{DBDIR}/aide.db.gz
 gzip_dbout=<%= node['aide']['gzip'] %>
-<% if node[:platform_version].to_i >= 22" %>
+<% if node[:platform_version].to_i >= 22 %>
 database_in=file:@@{DBDIR}/aide.db.gz
 log_level=<%= node['aide']['log_level'] %>
 <% else %>
