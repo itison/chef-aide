@@ -8,7 +8,7 @@ end
 
 # Newer AIDE versions split logging/reporting so now we're left with this mess.
 
-if node[:platform_version] == "22.04"
+if node[:platform_version].to_i >= 22
   quiet_report = "--before='report_quiet=true'"
   verbose_report = "--before='report_quiet=false'"
 else
